@@ -1,4 +1,4 @@
-name: GitHub Actions
+name: GitHub Actions 
 
 on:
   schedule:
@@ -26,8 +26,9 @@ jobs:
       - name: Generate m3u list
         run: python main.py > ./output/rakuten.m3u
         env:
-          HTTP_PROXY: http://${{ secrets.PROXY_USERNAME }}:${{ secrets.PROXY_PASSWORD }}@${{ secrets.PROXY_IP }}:5009
-          HTTPS_PROXY: http://${{ secrets.PROXY_USERNAME }}:${{ secrets.PROXY_PASSWORD }}@${{ secrets.PROXY_IP }}:5009
+          # 使用这种方式可以避免拼接时出现多余的冒号或空格
+          HTTP_PROXY: "http://${{ secrets.PROXY_USERNAME }}:${{ secrets.PROXY_PASSWORD }}@${{ secrets.PROXY_IP }}:5009"
+          HTTPS_PROXY: "http://${{ secrets.PROXY_USERNAME }}:${{ secrets.PROXY_PASSWORD }}@${{ secrets.PROXY_IP }}:5009"
 
       - name: Add updated list to repository
         uses: EndBug/add-and-commit@v9
