@@ -25,15 +25,12 @@ jobs:
 
       - name: Generate m3u list
         run: python main.py > ./output/rakuten.m3u
-        env:
-          # 使用这种方式可以避免拼接时出现多余的冒号或空格
-          HTTP_PROXY: "http://${{ secrets.PROXY_USERNAME }}:${{ secrets.PROXY_PASSWORD }}@${{ secrets.PROXY_IP }}:5009"
-          HTTPS_PROXY: "http://${{ secrets.PROXY_USERNAME }}:${{ secrets.PROXY_PASSWORD }}@${{ secrets.PROXY_IP }}:5009"
+        # 移除了所有 env 代理配置，直接使用官方网络
 
       - name: Add updated list to repository
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
-          message: "Update Rakuten UK list"
+          message: "Update Rakuten UK list without proxy"
           add: '*.m3u --force'
           cwd: './output/'
