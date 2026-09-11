@@ -1,5 +1,4 @@
-#EXTM3U url-tvg="https://akariko−bck1.sankuria.sbs/epg/kai-epg.xml,https://github.com/mathlabroom/SKyperfectv-EPG-/releases/download/latest/epg_ultimate.xml" tvg-shift=0 m3uautoload=1
-#EXTM3U url-tvg="https://epg.freejptv.com/jp.xml,https://animenosekai.github.io/japanterebi-xmltv/guide.xml" tvg-shift=0 m3uautoload=1
+#EXTM3U url-tvg="https://akariko−bck1.sankuria.sbs/epg/kai-epg.xml,https://github.com/mathlabroom/SKyperfectv-EPG-/releases/download/latest/epg_ultimate.xml,https://epg.freejptv.com/jp.xml,https://animenosekai.github.io/japanterebi-xmltv/guide.xml" tvg-shift=0 m3uautoload=1
 
 ####################
 # Tokyo
